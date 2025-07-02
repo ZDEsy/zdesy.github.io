@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/static/css/main.481de3a7.css",
+    "main.js": "/static/js/main.51a1a2b8.js",
+    "static/js/605.20d788a4.chunk.js": "/static/js/605.20d788a4.chunk.js",
+    "static/media/main.jpg": "/static/media/main.643387fc68c44d2adf5f.jpg",
+    "static/media/thmCerts.jpg": "/static/media/thmCerts.b38b3fc0b5b175cd833b.jpg",
+    "static/media/netAcadCerts.jpg": "/static/media/netAcadCerts.9ef77f2086b56f84cb94.jpg",
+    "static/media/kpbi.jpg": "/static/media/kpbi.6b8a29e36ec445f726a4.jpg",
+    "static/media/bulletHeartCover.png": "/static/media/bulletHeartCover.c73b778e2a51a3e11a2e.png",
+    "static/media/hackingPage.jpg": "/static/media/hackingPage.0f9bc00082a6929f9c32.jpg",
+    "static/media/redactionSystemJFrame.png": "/static/media/redactionSystemJFrame.7d7c37444ed65d8eb222.png",
+    "static/media/buttonTimeCover.png": "/static/media/buttonTimeCover.f611534193b3dcc4da09.png",
+    "index.html": "/index.html"
+  },
+  "entrypoints": [
+    "static/css/main.481de3a7.css",
+    "static/js/main.51a1a2b8.js"
+  ]
+}
