@@ -29,9 +29,9 @@
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
-        "predeploy": "yarn build && cp build/index.html build/404.html",
+        "predeploy": "yarn build && copy build\\index.html build\\404.html",
         "deploy": "gh-pages -d build",
-	"postinstall": "patch-package"
+        "postinstall": "patch-package"
     },
     "eslintConfig": {
         "extends": [
@@ -52,6 +52,7 @@
         ]
     },
     "devDependencies": {
+        "gh-pages": "^6.3.0",
         "patch-package": "^8.0.0",
         "postinstall-postinstall": "^2.1.0"
     }
