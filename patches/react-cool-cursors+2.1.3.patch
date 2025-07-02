@@ -1,0 +1,88 @@
+diff --git a/node_modules/react-cool-cursors/dist/index.js b/node_modules/react-cool-cursors/dist/index.js
+index abe7047..c7b2c47 100644
+--- a/node_modules/react-cool-cursors/dist/index.js
++++ b/node_modules/react-cool-cursors/dist/index.js
+@@ -144,4 +144,4 @@
+       transform: scale(1);
+       opacity: 0;
+     }
+-`;exports.CustomPngCursor=({size:t=20,opacity:n=1,TransitionTime:r=0,icon:o="https://i.ibb.co.com/ts3cf3j/Untitled-design.png",hideDefaultCursor:s=!0})=>{const a=e.useRef(null);return e.useEffect((()=>{const e=a.current;if(!e)return;const n=n=>{e.setAttribute("style",`top: ${n.pageY-(t-20)}px; left: ${n.pageX-(t-20)}px;`)},r=()=>{e.classList.add("expand"),setTimeout((()=>{e.classList.remove("expand")}),500)};return document.addEventListener("mousemove",n),document.addEventListener("click",r),()=>{document.removeEventListener("mousemove",n),document.removeEventListener("click",r)}}),[t]),e.createElement(e.Fragment,null,e.createElement(Wt,{ref:a,size:t,opacity:n,TransitionTime:r},o?e.createElement("img",{src:o,alt:"Custom Cursor"}):null),e.createElement(Ht,{hideDefaultCursor:s}))},exports.DonutCursor=({delay:t,size:n,sizeDot:r=n||10,sizeOutline:o=n||45,color:s="black",border:a="2px solid black",hideDefaultCursor:i=!0,opacity:c=1})=>{const l=e.useRef(null),u=e.useRef(null),{position:d}=((t=0,n)=>{const[r,o]=e.useState(n),s=e.useRef(0),a=e.useRef(n);return e.useEffect((()=>{const e=e=>{a.current={x:e.clientX,y:e.clientY},0===t&&o(a.current)};return window.addEventListener("mousemove",e),()=>{window.removeEventListener("mousemove",e)}}),[t]),e.useEffect((()=>{if(0===t)return;const e=()=>{const n=1-.09*t,i=Ut(r.x,a.current.x,n),c=Ut(r.y,a.current.y,n);o({x:i,y:c}),s.current=requestAnimationFrame(e)};return s.current=requestAnimationFrame(e),()=>{cancelAnimationFrame(s.current)}}),[r,t]),{position:r}})(t,{x:0,y:0});return e.useEffect((()=>{const e=e=>{l.current&&(l.current.style.left=`${e.clientX}px`,l.current.style.top=`${e.clientY}px`,l.current.style.transform="translate(-50%, -50%)")};return window.addEventListener("mousemove",e),()=>window.removeEventListener("mousemove",e)}),[]),e.useEffect((()=>{u.current&&(u.current.style.left=`${d.x}px`,u.current.style.top=`${d.y}px`,u.current.style.transform="translate(-50%, -50%)")}),[d]),e.createElement("div",{className:"donut"},e.createElement("div",{ref:l,style:{width:`${r}px`,height:`${r}px`,position:"fixed",pointerEvents:"none",zIndex:1e3,backgroundColor:s,borderRadius:"50%",opacity:c}}),e.createElement("div",{ref:u,style:{width:`${o}px`,height:`${o}px`,borderRadius:"50%",border:a,pointerEvents:"none",zIndex:1e3,backgroundColor:"transparent",position:"fixed",transition:"all 0.3s ease-out",opacity:c}})," ",e.createElement(Ht,{hideDefaultCursor:i}))},exports.ElasticCursor=({size:t=40,color:n="transparent",border:r="1px solid black",TransitionTime:o=.17,opacity:s=1,hideDefaultCursor:a=!0})=>{const i=e.useRef(null),c=e.useRef({x:0,y:0}),l=e.useRef({x:0,y:0}),u=e.useRef({x:0,y:0}),d=e.useRef(0),p=e.useRef(0),f=o;return e.useEffect((()=>{const e=e=>{c.current.x=e.x,c.current.y=e.y},t=()=>{u.current.x+=(c.current.x-u.current.x)*f,u.current.y+=(c.current.y-u.current.y)*f;const e=`translate(${u.current.x}px, ${u.current.y}px)`,n=c.current.x-l.current.x,r=c.current.y-l.current.y;l.current.x=c.current.x,l.current.y=c.current.y;const o=Math.min(4*Math.sqrt(n**2+r**2),150),s=o/150*.5;d.current+=(s-d.current)*f;const a=`scale(${1+d.current}, ${1-d.current})`,h=Math.atan2(r,n)*(180/Math.PI);o>20&&(p.current=h);const m=`rotate(${p.current}deg)`;i.current&&(i.current.style.transform=`${e} ${m} ${a}`),requestAnimationFrame(t)};return window.addEventListener("mousemove",e),t(),()=>{window.removeEventListener("mousemove",e)}}),[]),e.createElement(e.Fragment,null,e.createElement(Xt,{TransitionTime:o,ref:i,size:t,opacity:s,border:r,color:n}),e.createElement(Ht,{hideDefaultCursor:a}))},exports.FluidCursor=({size:t=28,color:n="black",opacity:r=1,border:o="none",TransitionTime:s=.2,hideDefaultCursor:a=!0})=>{let i=0,c=0;const l=[],u=Array(20).fill({x:0,y:0});return e.useEffect((()=>{const e=document.getElementById("waveCursor");function a(e){i=e.clientX,c=e.clientY}return document.addEventListener("mousemove",a,!1),function(){for(let t=0;t<20;t++){const t=document.createElement("div");t.classList.add("cursor-circle"),e.appendChild(t),l.push(t)}}(),function e(){u.shift(),u.push({x:i,y:c});for(let e=0;e<20;e++){let a=u[e],i=u[e+1]||u[19];const c=i.x-a.x,d=i.y-a.y;a.x+=.35*c,a.y+=.35*d,l[e].style.transform=`translate(${a.x}px, ${a.y}px) scale(${e/20})`,l[e].style.width=`${t}px`,l[e].style.height=`${t}px`,l[e].style.background=n,l[e].style.opacity=r.toString(),l[e].style.border=o.toString(),l[e].style.transition=`all ${s}s ease-out`}requestAnimationFrame(e)}(),()=>{document.removeEventListener("mousemove",a)}}),[n,t]),e.createElement("div",null,e.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",className:"goo",version:"1.1",width:"100%"},e.createElement("defs",null,e.createElement("filter",{id:"goo"},e.createElement("feGaussianBlur",{in:"SourceGraphic",stdDeviation:"6",result:"blur"}),e.createElement("feColorMatrix",{in:"blur",mode:"matrix",values:"1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 35 -15",result:"goo"}),e.createElement("feComposite",{in:"SourceGraphic",in2:"goo",operator:"atop"})))),e.createElement("div",{id:"waveCursor"}),";",e.createElement(Ht,{hideDefaultCursor:a}))},exports.PieCursor=({size:t=20,color:n="black",opacity:r=1,border:o="1px solid black",TransitionTime:s=.2,InnerBorderColor:a="black",hideDefaultCursor:i=!0})=>{const c=e.useRef(null);return e.useEffect((()=>{const e=c.current;if(!e)return;const n=n=>{e.setAttribute("style",`top: ${n.pageY-(t+20)}px; left: ${n.pageX-(t+20)}px;`)},r=()=>{e.classList.add("expanded"),setTimeout((()=>{e.classList.remove("expanded")}),300)};return document.addEventListener("mousemove",n),document.addEventListener("click",r),()=>{document.removeEventListener("mousemove",n),document.removeEventListener("click",r)}}),[t]),e.createElement(e.Fragment,null,e.createElement(Kt,{ref:c,size:t,color:n,opacity:r,border:o,InnerBorderColor:a,TransitionTime:s}),e.createElement(Ht,{hideDefaultCursor:i}))},exports.SimpleCursor=({size:t=20,color:n="black",opacity:r=1,border:o="1px solid black",TransitionTime:s=.2,hideDefaultCursor:a=!0})=>{const i=e.useRef(null);return e.useEffect((()=>{const e=i.current;if(!e)return;const n=n=>{e.setAttribute("style",`top: ${n.pageY-t/2}px; left: ${n.pageX-t/2}px;`)},r=()=>{e.classList.add("expand"),setTimeout((()=>{e.classList.remove("expand")}),500)};return document.addEventListener("mousemove",n),document.addEventListener("click",r),()=>{document.removeEventListener("mousemove",n),document.removeEventListener("click",r)}}),[t]),e.createElement(e.Fragment,null,e.createElement(Jt,{ref:i,size:t,color:n,opacity:r,border:o,TransitionTime:s}),e.createElement(Ht,{hideDefaultCursor:a}))};
++`;exports.CustomPngCursor=({size:t=20,opacity:n=1,TransitionTime:r=0,icon:o="https://i.ibb.co.com/ts3cf3j/Untitled-design.png",hideDefaultCursor:s=!0})=>{const a=e.useRef(null);return e.useEffect((()=>{const e=a.current;if(!e)return;const n=n=>{e.setAttribute("style",`top: ${n.pageY-(t-20)}px; left: ${n.pageX-(t-20)}px;`)},r=()=>{e.classList.add("expand"),setTimeout((()=>{e.classList.remove("expand")}),500)};return document.addEventListener("mousemove",n),document.addEventListener("click",r),()=>{document.removeEventListener("mousemove",n),document.removeEventListener("click",r)}}),[t]),e.createElement(e.Fragment,null,e.createElement(Wt,{ref:a,size:t,opacity:n,TransitionTime:r},o?e.createElement("img",{src:o,alt:"Custom Cursor"}):null),e.createElement(Ht,{hideDefaultCursor:s}))},exports.DonutCursor=({delay:t,size:n,sizeDot:r=n||10,sizeOutline:o=n||45,color:s="black",border:a="2px solid black",hideDefaultCursor:i=!0,opacity:c=1})=>{const l=e.useRef(null),u=e.useRef(null),{position:d}=((t=0,n)=>{const[r,o]=e.useState(n),s=e.useRef(0),a=e.useRef(n);return e.useEffect((()=>{const e=e=>{a.current={x:e.clientX,y:e.clientY},0===t&&o(a.current)};return window.addEventListener("mousemove",e),()=>{window.removeEventListener("mousemove",e)}}),[t]),e.useEffect((()=>{if(0===t)return;const e=()=>{const n=1-.09*t,i=Ut(r.x,a.current.x,n),c=Ut(r.y,a.current.y,n);o({x:i,y:c}),s.current=requestAnimationFrame(e)};return s.current=requestAnimationFrame(e),()=>{cancelAnimationFrame(s.current)}}),[r,t]),{position:r}})(t,{x:0,y:0});return e.useEffect((()=>{const e=e=>{l.current&&(l.current.style.left=`${e.clientX}px`,l.current.style.top=`${e.clientY}px`,l.current.style.transform="translate(-50%, -50%)")};return window.addEventListener("mousemove",e),()=>window.removeEventListener("mousemove",e)}),[]),e.useEffect((()=>{u.current&&(u.current.style.left=`${d.x}px`,u.current.style.top=`${d.y}px`,u.current.style.transform="translate(-50%, -50%)")}),[d]),e.createElement("div",{className:"donut"},e.createElement("div",{ref:l,style:{width:`${r}px`,height:`${r}px`,position:"fixed",pointerEvents:"none",zIndex:1e3,backgroundColor:s,borderRadius:"50%",opacity:c}}),e.createElement("div",{ref:u,style:{width:`${o}px`,height:`${o}px`,borderRadius:"50%",border:a,pointerEvents:"none",zIndex:1e3,backgroundColor:"transparent",position:"fixed",transition:"all 0.3s ease-out",opacity:c}})," ",e.createElement(Ht,{hideDefaultCursor:i}))},exports.ElasticCursor=({size:t=40,color:n="transparent",border:r="1px solid black",TransitionTime:o=.17,opacity:s=1,hideDefaultCursor:a=!0})=>{const i=e.useRef(null),c=e.useRef({x:0,y:0}),l=e.useRef({x:0,y:0}),u=e.useRef({x:0,y:0}),d=e.useRef(0),p=e.useRef(0),f=o;return e.useEffect((()=>{const e=e=>{c.current.x=e.x,c.current.y=e.y},t=()=>{u.current.x+=(c.current.x-u.current.x)*f,u.current.y+=(c.current.y-u.current.y)*f;const e=`translate(${u.current.x}px, ${u.current.y}px)`,n=c.current.x-l.current.x,r=c.current.y-l.current.y;l.current.x=c.current.x,l.current.y=c.current.y;const o=Math.min(4*Math.sqrt(n**2+r**2),150),s=o/150*.5;d.current+=(s-d.current)*f;const a=`scale(${1+d.current}, ${1-d.current})`,h=Math.atan2(r,n)*(180/Math.PI);o>20&&(p.current=h);const m=`rotate(${p.current}deg)`;i.current&&(i.current.style.transform=`${e} ${m} ${a}`),requestAnimationFrame(t)};return window.addEventListener("mousemove",e),t(),()=>{window.removeEventListener("mousemove",e)}}),[]),e.createElement(e.Fragment,null,e.createElement(Xt,{TransitionTime:o,ref:i,size:t,opacity:s,border:r,color:n}),e.createElement(Ht,{hideDefaultCursor:a}))},exports.FluidCursor=({size:t=28,color:n="black",opacity:r=1,border:o="none",TransitionTime:s=.2,hideDefaultCursor:a=!0})=>{let i=0,c=0;const l=[],u=Array(20).fill({x:0,y:0});return e.useEffect((()=>{const e=document.getElementById("waveCursor");function a(e){i=e.clientX,c=e.clientY}return document.addEventListener("mousemove",a,!1),function(){for(let t=0;t<20;t++){const t=document.createElement("div");t.classList.add("cursor-circle"),e.appendChild(t),l.push(t)}}(),function e(){u.shift(),u.push({x:i,y:c});for(let e=0;e<20;e++){let a=u[e],i=u[e+1]||u[19];const c=i.x-a.x,d=i.y-a.y;a.x+=.35*c,a.y+=.35*d,l[e].style.transform=`translate(${a.x}px, ${a.y}px) scale(${e/20})`,l[e].style.width=`${t}px`,l[e].style.height=`${t}px`,l[e].style.background=n,l[e].style.opacity=r.toString(),l[e].style.border=o.toString(),l[e].style.transition=`all ${s}s ease-out`}requestAnimationFrame(e)}(),()=>{document.removeEventListener("mousemove",a)}}),[n,t]),e.createElement("div",null,e.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",className:"goo",version:"1.1",width:"100%"},e.createElement("defs",null,e.createElement("filter",{id:"goo"},e.createElement("feGaussianBlur",{in:"SourceGraphic",stdDeviation:"6",result:"blur"}),e.createElement("feColorMatrix",{in:"blur",mode:"matrix",values:"1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 35 -15",result:"goo"}),e.createElement("feComposite",{in:"SourceGraphic",in2:"goo",operator:"atop"})))),e.createElement("div",{id:"waveCursor"}),e.createElement(Ht,{hideDefaultCursor:a}))},exports.PieCursor=({size:t=20,color:n="black",opacity:r=1,border:o="1px solid black",TransitionTime:s=.2,InnerBorderColor:a="black",hideDefaultCursor:i=!0})=>{const c=e.useRef(null);return e.useEffect((()=>{const e=c.current;if(!e)return;const n=n=>{e.setAttribute("style",`top: ${n.pageY-(t+20)}px; left: ${n.pageX-(t+20)}px;`)},r=()=>{e.classList.add("expanded"),setTimeout((()=>{e.classList.remove("expanded")}),300)};return document.addEventListener("mousemove",n),document.addEventListener("click",r),()=>{document.removeEventListener("mousemove",n),document.removeEventListener("click",r)}}),[t]),e.createElement(e.Fragment,null,e.createElement(Kt,{ref:c,size:t,color:n,opacity:r,border:o,InnerBorderColor:a,TransitionTime:s}),e.createElement(Ht,{hideDefaultCursor:i}))},exports.SimpleCursor=({size:t=20,color:n="black",opacity:r=1,border:o="1px solid black",TransitionTime:s=.2,hideDefaultCursor:a=!0})=>{const i=e.useRef(null);return e.useEffect((()=>{const e=i.current;if(!e)return;const n=n=>{e.setAttribute("style",`top: ${n.pageY-t/2}px; left: ${n.pageX-t/2}px;`)},r=()=>{e.classList.add("expand"),setTimeout((()=>{e.classList.remove("expand")}),500)};return document.addEventListener("mousemove",n),document.addEventListener("click",r),()=>{document.removeEventListener("mousemove",n),document.removeEventListener("click",r)}}),[t]),e.createElement(e.Fragment,null,e.createElement(Jt,{ref:i,size:t,color:n,opacity:r,border:o,TransitionTime:s}),e.createElement(Ht,{hideDefaultCursor:a}))};
+diff --git a/node_modules/react-cool-cursors/src/Components/FluidCursor/FluidCursor.tsx b/node_modules/react-cool-cursors/src/Components/FluidCursor/FluidCursor.tsx
+index d7298d9..b0e7adb 100644
+--- a/node_modules/react-cool-cursors/src/Components/FluidCursor/FluidCursor.tsx
++++ b/node_modules/react-cool-cursors/src/Components/FluidCursor/FluidCursor.tsx
+@@ -79,39 +79,39 @@ const FluidCursor: React.FC<FluidCursorProps> = ({
+     };
+   }, [color, size]); // Re-run effect if props change
+ 
+-  return (
+-    <div>
+-      <svg
+-        xmlns="http://www.w3.org/2000/svg"
+-        className="goo"
+-        version="1.1"
+-        width="100%"
+-      >
+-        <defs>
+-          <filter id="goo">
+-            <feGaussianBlur
+-              in="SourceGraphic"
+-              stdDeviation="6"
+-              result="blur"
+-            ></feGaussianBlur>
+-            <feColorMatrix
+-              in="blur"
+-              mode="matrix"
+-              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 35 -15"
+-              result="goo"
+-            ></feColorMatrix>
+-            <feComposite
+-              in="SourceGraphic"
+-              in2="goo"
+-              operator="atop"
+-            ></feComposite>
+-          </filter>
+-        </defs>
+-      </svg>
+-      <div id="waveCursor" />;
+-      <HideCursor hideDefaultCursor={hideDefaultCursor} />
+-    </div>
+-  );
+-};
++    return (
++        <div>
++            <svg
++                xmlns="http://www.w3.org/2000/svg"
++                className="goo"
++                version="1.1"
++                width="100%"
++            >
++                <defs>
++                    <filter id="goo">
++                        <feGaussianBlur
++                            in="SourceGraphic"
++                            stdDeviation="6"
++                            result="blur"
++                        ></feGaussianBlur>
++                        <feColorMatrix
++                            in="blur"
++                            mode="matrix"
++                            values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 35 -15"
++                            result="goo"
++                        ></feColorMatrix>
++                        <feComposite
++                            in="SourceGraphic"
++                            in2="goo"
++                            operator="atop"
++                        ></feComposite>
++                    </filter>
++                </defs>
++            </svg>
++            <div id="waveCursor" />
++            <HideCursor hideDefaultCursor={hideDefaultCursor} />
++        </div>
++    )
++}
+ 
+ export default FluidCursor;

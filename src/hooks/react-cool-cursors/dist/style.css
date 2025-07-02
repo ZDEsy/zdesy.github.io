@@ -1,0 +1,1 @@
+.donut{z-index:9999}:root{--cursor-size:28px}#waveCursor{filter:url(#goo);left:calc(var(--cursor-size)*-.5);position:fixed;top:-10px}#waveCursor,.cursor-circle{pointer-events:none;z-index:99999}.cursor-circle{border-radius:50%;height:var(--cursor-size);left:0;position:absolute;position:fixed;top:0;transform-origin:center center;width:var(--cursor-size)}.goo{display:none}

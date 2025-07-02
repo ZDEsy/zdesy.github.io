@@ -1,0 +1,41 @@
+.on-handle-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    border-radius: inherit;
+}
+
+.off-handle-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    border-radius: inherit;
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: var(--text-color);
+    font-size: 15px;
+    padding-right: 2px;
+}
+
+.switch:hover b {
+    color: red;
+}
+
+.switch {
+    border: 5px solid #000;
+    box-sizing: border-box;
+    border-radius: 0;
+    border-color: var(--primary-color);
+    z-index: 9999999;
+}
+
+    .switch b {
+        transition: .5s ease all;
+    }
