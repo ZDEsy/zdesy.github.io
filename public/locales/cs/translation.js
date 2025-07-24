@@ -112,20 +112,20 @@
             "link": ""
         },
         {
-            "description": "Jednoduchý redakční systém v Java JFrame – jeden z mých menších projektů dostupných na GitHubu",
-            "link": "https://github.com/ZDEsy/RedakcniSystemAGP"
+            "description": "Certifikáty z portálu TryHackMe – dostupné na mém GitHub profilu",
+            "link": "https://github.com/ZDEsy"
         },
         {
             "description": "Odznaky za absolvované kurzy Cisco NetAcad – všechny k nahlédnutí na mém GitHubu",
             "link": "https://github.com/ZDEsy"
         },
         {
-            "description": "Certifikáty z portálu TryHackMe – dostupné na mém GitHub profilu",
-            "link": "https://github.com/ZDEsy"
+            "description": "Moderní portfolio vytvořené pomocí Bootstrapu 5",
+            "link": "https://girlwithsoul.github.io"
         },
         {
-            "description": "Portfolio vytvořené pomocí Bootstrap 5",
-            "link": "https://girlwithsoul.github.io"
+            "description": "Jednoduchý redakční systém v Java JFrame – jeden z mých menších projektů dostupných na GitHubu",
+            "link": "https://github.com/ZDEsy/RedakcniSystemAGP"
         }
     ],
     "contact": {

@@ -50,10 +50,10 @@ const useContent = () => {
             hackingPage,
             buttonTimeCover,
             kpbi,
-            redactionSystemJFrame,
-            netAcadCerts,
             thmCerts,
-            bootstrapPortfolio
+            netAcadCerts,
+            bootstrapPortfolio,
+            redactionSystemJFrame,
         ][index],
         description: item.description,
         link: item.link,
