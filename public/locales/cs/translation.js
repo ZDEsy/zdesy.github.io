@@ -122,6 +122,10 @@
         {
             "description": "Certifikáty z portálu TryHackMe – dostupné na mém GitHub profilu",
             "link": "https://github.com/ZDEsy"
+        },
+        {
+            "description": "Portfolio vytvořené pomocí Bootstrap 5",
+            "link": "https://girlwithsoul.github.io"
         }
     ],
     "contact": {
