@@ -3,6 +3,7 @@ import bulletHeartCover from "./assets/images/bulletHeartCover.png";
 import buttonTimeCover from "./assets/images/buttonTimeCover.png";
 import redactionSystemJFrame from "./assets/images/redactionSystemJFrame.png";
 import thmCerts from "./assets/images/thmCerts.jpg";
+import bootstrapPortfolio from "./assets/images/bootstrapPortfolio.jpg";
 import netAcadCerts from "./assets/images/netAcadCerts.jpg";
 import hackingPage from "./assets/images/hackingPage.jpg";
 import kpbi from "./assets/images/kpbi.jpg";
@@ -52,6 +53,7 @@ const useContent = () => {
             redactionSystemJFrame,
             netAcadCerts,
             thmCerts,
+            bootstrapPortfolio
         ][index],
         description: item.description,
         link: item.link,
