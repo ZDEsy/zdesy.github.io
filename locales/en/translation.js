@@ -112,16 +112,20 @@
             "link": ""
         },
         {
-            "description": "Simple CMS in Java JFrame – one of my smaller GitHub projects",
-            "link": "https://github.com/ZDEsy/RedakcniSystemAGP"
+            "description": "TryHackMe certifications – viewable on GitHub",
+            "link": "https://github.com/ZDEsy"
         },
         {
             "description": "Course badges from Cisco NetAcad – all on GitHub",
             "link": "https://github.com/ZDEsy"
         },
         {
-            "description": "TryHackMe certifications – viewable on GitHub",
-            "link": "https://github.com/ZDEsy"
+            "description": "A modern portfolio built with Bootstrap 5",
+            "link": "https://girlwithsoul.github.io"
+        },
+        {
+            "description": "Simple CMS in Java JFrame – one of my smaller GitHub projects",
+            "link": "https://github.com/ZDEsy/RedakcniSystemAGP"
         }
     ],
     "contact": {
